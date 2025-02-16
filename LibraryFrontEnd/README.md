@@ -20,8 +20,8 @@ Follow these steps to set up and run the project:
     cd library-frontend
 
 ### 2. Install dependencies
-   ```bash
-   npm install
+    ```bash
+    npm install
 
 ### 3. Run the application
     ```bash
