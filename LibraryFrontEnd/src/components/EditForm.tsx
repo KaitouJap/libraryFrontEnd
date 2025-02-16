@@ -21,7 +21,11 @@ const EditForm: React.FC<EditProps> = ({ book, show, onClose, onSave }) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setEditedBook({ ...editedBook, [name]: name === 'year' || name === 'pages' ? parseInt(value) : value });
+    if(name === 'available'){
+      setEditedBook({ ...editedBook, [name]: value === 'Yes' ? true : false});
+    }else{
+      setEditedBook({ ...editedBook, [name]: name === 'year' || name === 'pages' ? parseInt(value) : value });
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {

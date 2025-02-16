@@ -29,7 +29,11 @@ const CreateForm: React.FC<CreateFormProps> = ({ show, onClose, onSave }) => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
-        setNewBook({ ...newBook, [name]: name === 'year' || name === 'pages' ? parseInt(value) : value });
+        if(name ==='available'){
+            setNewBook({ ...newBook, [name]: value === 'Yes' ? true : false});
+        }else{
+            setNewBook({ ...newBook, [name]: name === 'year' || name === 'pages' ? parseInt(value) : value });
+        }
     };
 
     const validateForm = () => {
